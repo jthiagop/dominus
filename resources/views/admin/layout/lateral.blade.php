@@ -34,6 +34,7 @@
                             </a>
                             <a class="nav-link" href="{{route('matriz.listen')}}">Listar</a>
                             <a class="nav-link" href="{{route('organismo.listen')}}">Organismos</a>
+                            <a class="nav-link" href="{{route('users.index')}}">Usuários</a>
                         </nav>
                     </div>
                     <!-- Sidenav Heading (Custom)-->

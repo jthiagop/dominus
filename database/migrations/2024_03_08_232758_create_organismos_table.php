@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('matriz_id')->nullable();
 
-            $table->string('razaosocial');
+            $table->string('razaosocial')->unique();
             $table->string('cnpj')->unique();
             $table->date('data_cnpj')->nullable();
             $table->date('data_fundacao')->nullable();
@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('complemento')->nullable();
             $table->string('cidade')->nullable();
             $table->string('uf')->nullable();
-            $table->enum('natureza',['matriz','filial'])->nullable();
+            $table->enum('natureza',['matriz','filial']);
             $table->string('image')->nullable();
             $table->timestamps();
 

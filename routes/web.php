@@ -3,6 +3,7 @@
 use App\Http\Controllers\MatrizController;
 use App\Http\Controllers\OrganismoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,9 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
 
+
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
     Route::put('/organismo/{id}', [OrganismoController::class, 'update'])->name('organismo.update');
     Route::get('/organismo/{id}/edit', [OrganismoController::class, 'edit'])->name('organismo.edit');
     Route::get('/organismo/create', [OrganismoController::class, 'create'])->name('organismo.create');
@@ -39,6 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::get('matriz/{id}', [MatrizController::class, 'show'])->name('matriz.show');
     Route::post('matriz', [MatrizController::class, 'store'])->name('matriz.store');
     Route::get('/matriz', [MatrizController::class, 'index'])->name('matriz.index');
+
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -39,10 +39,6 @@ class Organismo extends Model
         return $this->belongsTo(Matriz::class);
     }
 
-    public function tenant(){
-        return $this->belongsTo(Tenant::class);
-    }
-
     public function users(){
         return $this->hasMany(User::class);
     }
